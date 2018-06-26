@@ -1,27 +1,9 @@
-// TODO: ここで jquery-ujs importしなくてもよい？
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
-
-// TODO: webpackerの導入
-// (() => {
-//   $(document).on('click', '.toggle-window', (e) => {
-//     e.preventDefault()
-//     let panel = $(this).parent().parent()
-//     let message_list = panel.find('message-list')
-
-//     panel.find('.panel-body').toggle()
-//     panel.attr('class', 'panel panel-default')
-
-//     if (panel.find('.panel-body').is(':visible')) {
-//       const height = message_list[0].scrollHeight
-//       message_list.scrollTop(height)
-//     }
-//   })
-// })()
 
 (function() {
   $(document).on('click', '.toggle-window', function(e) {

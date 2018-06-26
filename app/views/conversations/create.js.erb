@@ -1,22 +1,3 @@
-// let conversations = $('#conversations-list')
-// let conversation =
-//   conversations.find("[data-conversation-id='" + "<%= @conversation.id %>" + "']")
-
-// if (conversation.length !== 1) {
-//   conversations.append(
-//     "<%= j(render 'conversations/conversation', conversation: @conversation, user: current_user) %>"
-//   )
-//   conversation = conversation.find(
-//     "[data-conversation-id='" + "<%= @conversation.id %>" + "']"
-//   )
-// }
-
-// conversation.find('.panel-body').show()
-
-// const message_list = conversation.find('.message-list')
-// const height = message_list[0].scrollHeight
-// message_list.scrollTop(height)
-
 var conversations = $('#conversations-list');
 var conversation = conversations.find("[data-conversation-id='" + "<%= @conversation.id %>" + "']");
 
