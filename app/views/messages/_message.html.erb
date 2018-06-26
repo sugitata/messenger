@@ -1,7 +1,13 @@
 <li>
-  <div class="row">
-    <div class="<%= user.id == message.user_id ? 'message-sent' : 'message-received' %>">
-      <%= message.body %>
-    </div>
+  <div class="message d-flex">
+    <% if user.id == message.user_id %>
+      <div class="message__sent m-2 p-2 rounded ml-auto">
+        <%= message.body %>
+      </div>
+    <% else %>
+      <div class="message__received m-2 p-2 rounded mr-auto">
+        <%= message.body %>
+      </div>
+    <% end %>
   </div>
 </li>
