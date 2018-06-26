@@ -8,8 +8,7 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    - if user_signed_in?
-      %p= link_to "ログアウト", destroy_user_session_path, method: :delete
+    = render 'layouts/navbar'
     - if notice
       %p.notice= notice
     - elsif alert
