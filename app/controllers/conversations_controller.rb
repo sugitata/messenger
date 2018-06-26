@@ -2,7 +2,6 @@ class ConversationsController < ApplicationController
   def create
     # query paramsを?user_id=curernt_user.idにして会話状態をget
     @conversation = Conversation.get(current_user.id, params[:user_id])
-    # @conversation = Conversation.get(1, params[:user_id])
 
     add_to_conversations unless conversated?
 
