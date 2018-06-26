@@ -1,0 +1,13 @@
+.row
+  .col-md-3
+    .card
+      .card-header
+        %h3.card-title User List
+      .card-body
+        %ul
+          - @users.each do |u|
+            %li= link_to u.email, conversations_path(user_id: u), remote: true, method: :post
+  .col-md-9
+    %ul#conversations-list
+      - @conversations.each do |c|
+        = render 'conversations/conversation', conversation: c, user: current_user

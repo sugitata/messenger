@@ -1,0 +1,8 @@
+%li
+  .message.d-flex
+    - if user.id == message.user_id
+      .message__sent.m-2.p-2.rounded.ml-auto
+        = message.body
+    - else
+      .message__received.m-2.p-2.rounded.mr-auto
+        = message.body
