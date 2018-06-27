@@ -8,5 +8,5 @@
     .message-form
       = form_for [conversation, conversation.messages.new], html: {class: 'd-flex'}, remote: true do |f|
         = f.hidden_field :user_id, value: user.id
-        = f.text_field :body, class: "message-form__field mr-2 form-control"
+        = f.text_field :body, required: true, class: "message-form__field mr-2 form-control"
         = f.submit "Send", class: "btn btn-primary"
