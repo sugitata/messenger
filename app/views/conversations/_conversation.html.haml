@@ -1,14 +1,12 @@
-%li
-  .card{"data-conversation-id" => "#{conversation.id}"}
-    .card-header.d-flex.align-items-center.justify-content-between
-      = link_to conversation.opposed_user(user).email
-      = link_to "x", close_conversation_path(conversation), class: "btn btn-default btn-xs", remote: true, method: :post
-    .card-body{:style => "display: none;"}
-      .messages-list.mb-2
-        %ul
-          = render 'conversations/conversation_content', messages: conversation.messages, user: user
-      .message-form
-        = form_for [conversation, conversation.messages.new], html: {class: 'd-flex'}, remote: true do |f|
-          = f.hidden_field :user_id, value: user.id
-          = f.text_field :body, class: "message-form__field mr-2 form-control"
-          = f.submit "Send", class: "btn btn-primary"
+.card{"data-conversation-id" => "#{conversation.id}"}
+  .card-header.d-flex.align-items-center.justify-content-between
+    = link_to conversation.opposed_user(user).email
+  .card-body
+    .messages-list.mb-2
+      %ul
+        = render 'conversations/conversation_content', messages: conversation.messages, user: user
+    .message-form
+      = form_for [conversation, conversation.messages.new], html: {class: 'd-flex'}, remote: true do |f|
+        = f.hidden_field :user_id, value: user.id
+        = f.text_field :body, class: "message-form__field mr-2 form-control"
+        = f.submit "Send", class: "btn btn-primary"
