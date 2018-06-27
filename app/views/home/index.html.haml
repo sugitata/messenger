@@ -9,5 +9,5 @@
             %li= link_to u.email, conversations_path(user_id: u), remote: true, method: :post
   .col-md-9
     .conversation
-      - if @conversations.length != 0
-        = render 'conversations/conversation', conversation: @conversations[0], user: current_user
+      - if @conversation.length != 0
+        = render 'conversations/conversation', conversation: @conversation[0], user: current_user

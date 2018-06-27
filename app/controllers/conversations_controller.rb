@@ -2,7 +2,7 @@ class ConversationsController < ApplicationController
   def create
     @conversation = Conversation.get(current_user.id, params[:user_id])
 
-    add_to_conversations unless conversated?
+    add_to_conversation unless conversated?
 
     respond_to do |format|
       format.js
@@ -11,12 +11,12 @@ class ConversationsController < ApplicationController
 
   private
 
-  def add_to_conversations
-    session[:conversations] = []
-    session[:conversations] << @conversation.id
+  def add_to_conversation
+    session[:conversation] = []
+    session[:conversation] << @conversation.id
   end
 
   def conversated?
-    session[:conversations].include?(@conversation.id)
+    session[:conversation].include?(@conversation.id)
   end
 end

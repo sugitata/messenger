@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
   def index
-    session[:conversations] ||= []
+    session[:conversation] ||= []
 
     @users = User.all.where.not(id: current_user)
-    @conversations = Conversation.includes(:recipient, :messages)
-                                 .find(session[:conversations])
+    @conversation = Conversation.includes(:recipient, :messages)
+                                 .find(session[:conversation])
   end
 end
