@@ -1,0 +1,14 @@
+- if notice
+  .alert.alert-info.alert-dismissible.fade.show{ role: "alert" }
+    %button.close{ aria: {label: "Close"},  data: {dismiss: "alert"} }
+      %span{ aria: {hidden: "true"} }
+        &times;
+    %strong
+      = notice
+- elsif alert
+  .alert.alert-info.alert-dismissible.fade.show{ role: "alert" }
+    %button.close{ aria: {label: "Close"},  data: {dismiss: "alert"} }
+      %span{ aria: {hidden: "true"} }
+        &times;
+    %strong
+      = alert

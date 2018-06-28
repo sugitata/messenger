@@ -8,10 +8,16 @@
 @import './conversations.scss';
 @import './messages.scss';
 @import './header.scss';
+@import './authCard.scss';
 
 ul {
   padding-left: 0;
   list-style: none;
 }
 
+$header-height: 56px;
+$header-margin-bottom: 3rem;
 
+.container {
+  height: calc(100vh - #{$header-height} - #{$header-margin-bottom});
+}

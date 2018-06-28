@@ -9,9 +9,6 @@
     = javascript_include_tag 'application'
   %body
     = render 'layouts/navbar'
-    - if notice
-      %p.notice= notice
-    - elsif alert
-      %p.alert= alert
     .container
+      = render 'layouts/notification'
       = yield
