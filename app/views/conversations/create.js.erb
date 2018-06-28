@@ -1,11 +1,7 @@
 var conversation = $('.conversation');
+conversation.html("<%= j(render 'conversations/conversation', conversation: @conversation, user: current_user) %>");
+
 var item = conversation.find("[data-conversation-id='" + "<%= @conversation.id %>" + "']");
-
-if (item.length !== 1) {
-  conversation.html("<%= j(render 'conversations/conversation', conversation: @conversation, user: current_user) %>");
-  item = conversation.find("[data-conversation-id='" + "<%= @conversation.id %>" + "']");
-}
-
 var messages_list = item.find('.messages-list');
 var height = messages_list[0].scrollHeight;
 messages_list.scrollTop(height);
