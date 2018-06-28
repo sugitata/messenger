@@ -39,6 +39,9 @@ App.conversation = App.cable.subscriptions.create({ channel: "ConversationChanne
     var conversationid = $('.message-form__conversationid');
     var userid = $('.message-form__userid');
     var messageForm = $('.message-form__field');
+    if (!messageForm.val()) {
+      return false
+    }
     App.conversation.speak(messageForm.val(), userid.val(), conversationid.val());
     return messageForm.val('');
   }
