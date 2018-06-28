@@ -1,6 +1,10 @@
 .header.d-flex.align-items-center.mb-5.px-4.py-3
   .header__brand.font-weight-bold
     Messenger
-  .header__logout.ml-auto
+  .header__right.d-flex.ml-auto
     - if user_signed_in?
+      .header__right__current-user{data: {current_user_id: current_user.id}}
+        = current_user.email
+      .mx-2
+        |
       = link_to "Log Out", destroy_user_session_path, method: :delete
