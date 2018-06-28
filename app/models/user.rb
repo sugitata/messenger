@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :messages
   has_many :conversations, foreign_key: :sender_id
+
+  validates :username,
+            presence: true,
+            length: { minimum: 3, maximum: 30 }
 end

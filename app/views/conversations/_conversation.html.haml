@@ -1,6 +1,6 @@
 .card{"data-conversation-id" => "#{conversation.id}"}
   .card-header.d-flex.align-items-center.justify-content-between
-    = link_to conversation.opposed_user(user).email
+    = conversation.opposed_user(user).username
   .card-body
     .messages-list.mb-2
       %ul
